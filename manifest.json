@@ -1,0 +1,20 @@
+{
+    "name": "Don't slack-redir links",
+    "description": "An efficient way to prevent Slack from replacing links with slack-redir.net, while still protecting privacy (against referrer leakage).",
+    "version": "1",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "run_at": "document_end",
+        "js": ["contentscript.js"],
+        "matches": ["*://*.slack.com/*"]
+    }],
+    "icons": {
+        "48": "logo.svg"
+    },
+    "web_accessible_resources": ["cleanlink.js"],
+    "applications": {
+        "gecko": {
+            "id": "dont-slack-redir@robwu.nl"
+        }
+    }
+}
